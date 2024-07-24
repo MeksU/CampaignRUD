@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserProfile from "../utils/UserProfile";
 import { useNavigate } from "react-router-dom";
 import "../style/LoginPage.css";
@@ -14,13 +14,6 @@ const LoginPage = () => {
   const [surname, setSurname] = useState("");
   const [error, setError] = useState("");
   const [isLogin, setIsLogin] = useState(true);
-  const [userId, setUserId] = useState(UserProfile.getUserId());
-
-  useEffect(() => {
-    if (userId !== -1) {
-      navigate("/home");
-    }
-  }, [navigate]);
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
